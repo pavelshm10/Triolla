@@ -1,6 +1,6 @@
-import { logger } from '../logger.js';
-import TaskService from '../services/task.service.js';
-import NodeCache from 'node-cache';
+import { logger } from "../logger.js";
+import TaskService from "../services/task.service.js";
+import NodeCache from "node-cache";
 
 const cache = new NodeCache();
 
@@ -13,14 +13,14 @@ class TaskController {
       return res.status(201).json(newTask);
     } catch (error) {
       logger.error(`Error creating task: ${error.message}`);
-      return res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(500).json({ error: "Internal Server Error" });
     }
   }
 
   async getTask(req, res) {
     try {
       const taskId = req.params.id;
-      console.log({taskId})
+      console.log({ taskId });
       const cachedTask = cache.get(taskId);
       if (cachedTask) {
         logger.info(`Cache hit for task ID: ${taskId}`);
@@ -29,13 +29,13 @@ class TaskController {
       const task = await TaskService.getTaskById(taskId);
       if (!task) {
         logger.warn(`Task not found: ${taskId}`);
-        return res.status(404).json({ error: 'Task not found' });
+        return res.status(404).json({ error: "Task not found" });
       }
       logger.info(`Fetched task: ${taskId}`);
       return res.json(task);
     } catch (error) {
       logger.error(`Error fetching task: ${error.message}`);
-      return res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(500).json({ error: "Internal Server Error" });
     }
   }
 
@@ -47,7 +47,17 @@ class TaskController {
       return res.json(updatedTask);
     } catch (error) {
       logger.error(`Error updating task: ${error.message}`);
-      return res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+
+  async getTasks(req, res) {
+    try {
+      const { page = 1, limit = 10 } = req.query;
+      const result = await TaskService.getTasks({ page, limit });
+      res.json(result);
+    } catch (error) {
+      next(error);
     }
   }
 }

@@ -1,24 +1,39 @@
-import { body, param, validationResult } from 'express-validator';
+import { body, param, validationResult, query } from "express-validator";
 
-// Validation rules for creating a task
 export const createTaskValidation = [
-  body('title').notEmpty().withMessage('Title is required').trim(),
-  body('description').notEmpty().withMessage('Description is required').trim(),
+  body("title").notEmpty().withMessage("Title is required").trim(),
+  body("description").notEmpty().withMessage("Description is required").trim(),
 ];
 
-// Validation rules for updating a task
 export const updateTaskValidation = [
-  param('id').isMongoId().withMessage('Invalid task ID'),
-  body('title').optional().trim(),
-  body('description').optional().trim(),
+  param("id").isMongoId().withMessage("Invalid task ID"),
+  body("title").optional().trim(),
+  body("description").optional().trim(),
 ];
 
-// Validation rules for getting a task by ID
 export const getTaskValidation = [
-  param('id').isMongoId().withMessage('Invalid task ID'),
+  param("id").isMongoId().withMessage("Invalid task ID"),
 ];
 
-// Middleware to check validation results
+export const validatePagination = [
+  query("page")
+    .optional()
+    .isInt({ min: 1 })
+    .withMessage("Page must be an integer greater than 0"),
+  query("limit")
+    .optional()
+    .isInt({ min: 1 })
+    .withMessage("Limit must be an integer greater than 0"),
+  (req, res, next) => {
+    // Check for validation errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    next();
+  },
+];
+
 export const validate = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
