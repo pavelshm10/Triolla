@@ -51,15 +51,28 @@ class TaskController {
     }
   }
 
-  async getTasks(req, res) {
+  async getTasks(req, res, next) {
     try {
-      const { page = 1, limit = 10, priority, title } = req.query;
+      const {
+        page = 1,
+        limit = 10,
+        priority,
+        title,
+        sortBy = "createdAt",
+        order = "asc",
+      } = req.query;
       const filterOptions = { priority, title };
-      const result = await TaskService.getTasks({ page, limit, filterOptions });
+
+      const result = await TaskService.getTasks({
+        page,
+        limit,
+        filterOptions,
+        sortBy,
+        order,
+      });
       res.json(result);
     } catch (error) {
-      logger.error(`Error fetching tasks: ${error.message}`);
-      return res.status(500).json({ error: "Internal Server Error" });
+      next(error);
     }
   }
 }

@@ -15,11 +15,32 @@ export const getTaskValidation = [
   param("id").isMongoId().withMessage("Invalid task ID"),
 ];
 
-export const getTasksValidation  = [
-  query('page').optional().isInt({ min: 1 }).withMessage('Page must be a positive integer.'),
-  query('limit').optional().isInt({ min: 1 }).withMessage('Limit must be a positive integer.'),
-  query('priority').optional().isIn(['high', 'medium', 'low']).withMessage('Invalid priority level.'),
-  query('title').optional().isString().trim().withMessage('Title must be a string.'),
+export const getTasksValidation = [
+  query("page")
+    .optional()
+    .isInt({ min: 1 })
+    .withMessage("Page must be a positive integer."),
+  query("limit")
+    .optional()
+    .isInt({ min: 1 })
+    .withMessage("Limit must be a positive integer."),
+  query("priority")
+    .optional()
+    .isIn(["high", "medium", "low"])
+    .withMessage("Invalid priority level."),
+  query("title")
+    .optional()
+    .isString()
+    .trim()
+    .withMessage("Title must be a string."),
+  query("sortBy")
+    .optional()
+    .isIn(["createdAt", "priority", "title"])
+    .withMessage("Invalid sort field."),
+  query("order")
+    .optional()
+    .isIn(["asc", "desc"])
+    .withMessage("Order must be asc or desc."),
 ];
 
 export const validate = (req, res, next) => {

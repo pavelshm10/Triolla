@@ -83,3 +83,13 @@
 {"level":"error","message":"Error fetching tasks: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:23:16"}
 {"level":"error","message":"Error fetching tasks: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:23:27"}
 {"level":"error","message":"Error fetching tasks: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:23:37"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:34:11"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:34:15"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:36:26"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:36:31"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:37:38"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:37:40"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:38:02"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:38:43"}
+{"level":"error","message":"Error occurred: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:42:13"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:42:45"}

@@ -29,22 +29,34 @@ class TaskService {
     return updatedTask;
   }
 
-  async getTasks({ page = 1, limit = 10, filterOptions }) {
+  async getTasks({ page = 1, limit = 10, filterOptions, sortBy, order }) {
     const query = {};
 
+    // Filter by priority if provided
     if (filterOptions.priority) {
       const priorityMapping = { high: 0.8, medium: 0.5, low: 0.2 };
       query.priority =
         priorityMapping[filterOptions.priority] || filterOptions.priority;
     }
 
+    // Filter by title if provided
     if (filterOptions.title) {
       query.title = new RegExp(filterOptions.title, "i");
     }
 
+    // Pagination and fetching
     const skip = (page - 1) * limit;
-    const tasks = await Task.find(query).skip(skip).limit(Number(limit));
 
+    // Determine sorting order
+    const sortOptions = {};
+    sortOptions[sortBy] = order === "desc" ? -1 : 1;
+
+    const tasks = await Task.find(query)
+      .sort(sortOptions)
+      .skip(skip)
+      .limit(Number(limit));
+
+    // Total count for metadata
     const totalTasks = await Task.countDocuments(query);
     const totalPages = Math.ceil(totalTasks / limit);
 
