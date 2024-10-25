@@ -29,20 +29,31 @@ class TaskService {
     return updatedTask;
   }
 
-  async getTasks({ page, limit }) {
-    const pageInt = parseInt(page, 10);
-    const limitInt = parseInt(limit, 10);
-    const skip = (pageInt - 1) * limitInt;
-    const tasks = await Task.find().skip(skip).limit(limitInt);
-    const totalTasks = await Task.countDocuments();
-    const totalPages = Math.ceil(totalTasks / limitInt);
+  async getTasks({ page = 1, limit = 10, filterOptions }) {
+    const query = {};
+
+    if (filterOptions.priority) {
+      const priorityMapping = { high: 0.8, medium: 0.5, low: 0.2 };
+      query.priority =
+        priorityMapping[filterOptions.priority] || filterOptions.priority;
+    }
+
+    if (filterOptions.title) {
+      query.title = new RegExp(filterOptions.title, "i");
+    }
+
+    const skip = (page - 1) * limit;
+    const tasks = await Task.find(query).skip(skip).limit(Number(limit));
+
+    const totalTasks = await Task.countDocuments(query);
+    const totalPages = Math.ceil(totalTasks / limit);
 
     return {
       metadata: {
         totalTasks,
         totalPages,
-        currentPage: pageInt,
-        tasksPerPage: limitInt,
+        currentPage: Number(page),
+        tasksPerPage: Number(limit),
       },
       tasks,
     };

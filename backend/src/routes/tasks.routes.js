@@ -4,7 +4,7 @@ import {
   createTaskValidation,
   updateTaskValidation,
   getTaskValidation,
-  validatePagination,
+  getTasksValidation,
   validate,
 } from "../validation/tasks.validation.js";
 
@@ -14,7 +14,7 @@ router.post("/", createTaskValidation, validate, TaskController.createTask);
 
 router.get("/:id", getTaskValidation, validate, TaskController.getTask);
 
-router.get("/", validatePagination, validate, TaskController.getTasks);
+router.get("/", getTasksValidation, validate, TaskController.getTasks);
 
 router.put("/:id", updateTaskValidation, validate, TaskController.updateTask);
 

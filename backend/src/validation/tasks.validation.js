@@ -15,23 +15,11 @@ export const getTaskValidation = [
   param("id").isMongoId().withMessage("Invalid task ID"),
 ];
 
-export const validatePagination = [
-  query("page")
-    .optional()
-    .isInt({ min: 1 })
-    .withMessage("Page must be an integer greater than 0"),
-  query("limit")
-    .optional()
-    .isInt({ min: 1 })
-    .withMessage("Limit must be an integer greater than 0"),
-  (req, res, next) => {
-    // Check for validation errors
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-    next();
-  },
+export const getTasksValidation  = [
+  query('page').optional().isInt({ min: 1 }).withMessage('Page must be a positive integer.'),
+  query('limit').optional().isInt({ min: 1 }).withMessage('Limit must be a positive integer.'),
+  query('priority').optional().isIn(['high', 'medium', 'low']).withMessage('Invalid priority level.'),
+  query('title').optional().isString().trim().withMessage('Title must be a string.'),
 ];
 
 export const validate = (req, res, next) => {

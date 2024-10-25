@@ -53,11 +53,13 @@ class TaskController {
 
   async getTasks(req, res) {
     try {
-      const { page = 1, limit = 10 } = req.query;
-      const result = await TaskService.getTasks({ page, limit });
+      const { page = 1, limit = 10, priority, title } = req.query;
+      const filterOptions = { priority, title };
+      const result = await TaskService.getTasks({ page, limit, filterOptions });
       res.json(result);
     } catch (error) {
-      next(error);
+      logger.error(`Error fetching tasks: ${error.message}`);
+      return res.status(500).json({ error: "Internal Server Error" });
     }
   }
 }

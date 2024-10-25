@@ -68,3 +68,18 @@
 {"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 22:43:03"}
 {"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 22:43:16"}
 {"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 22:43:20"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:16:33"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:17:11"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:17:12"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:17:13"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:19:13"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:19:47"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:22:16"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:22:19"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:22:44"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:22:53"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:22:55"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:23:12"}
+{"level":"error","message":"Error fetching tasks: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:23:16"}
+{"level":"error","message":"Error fetching tasks: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:23:27"}
+{"level":"error","message":"Error fetching tasks: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:23:37"}
