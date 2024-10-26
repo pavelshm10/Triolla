@@ -1,20 +1,28 @@
-import express from 'express';
-import taskRoutes from './routes/tasks.routes.js';
-import { logger, morganMiddleware } from './logger.js'
-import { errorHandler } from './middleware/errorHandler.js'; 
-import HttpError from './utils/HttpError.js';
-import connectDB from '../config/db.js';
+import express from "express";
+import taskRoutes from "./routes/tasks.routes.js";
+import { logger, morganMiddleware } from "./logger.js";
+import { errorHandler } from "./middleware/errorHandler.js";
+import HttpError from "./utils/HttpError.js";
+import connectDB from "../config/db.js";
+import cors from "cors";
 
 const app = express();
+app.use(
+  cors({
+    origin: "http://localhost:3001",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ['Content-Type'],
+  })
+);
 connectDB();
 app.use(morganMiddleware);
 
 app.use(express.json());
 
-app.use('/api/tasks', taskRoutes);
+app.use("/api/tasks", taskRoutes);
 
 app.use((req, res, next) => {
-  const error = new HttpError(404, 'Resource not found');
+  const error = new HttpError(404, "Resource not found");
   next(error);
 });
 

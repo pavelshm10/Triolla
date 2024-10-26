@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import TaskList from "./pages/TaskList/TaskList";
+import classes from "./App.module.css";
+import { useAppSelector } from "./redux/hooks/useRedux";
+import { Box, CircularProgress } from "@mui/material";
 function App() {
+  const loading = useAppSelector((state) => state.tasks.loading);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className={classes.title}>Taskboard</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Navigate to="/tasks" replace />} />
+          <Route path="/tasks" element={<TaskList />} />
+        </Routes>
+      </Router>
+      {/* {loading && ( */}
+       
+      {/* )} */}
+    </>
   );
 }
 

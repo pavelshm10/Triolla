@@ -93,3 +93,46 @@
 {"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:38:43"}
 {"level":"error","message":"Error occurred: taskService is not defined","service":"taskboard-service","timestamp":"2024-10-25 23:42:13"}
 {"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:42:45"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-25 23:47:55"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:48:53"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:49:49"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:51:44"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:53:41"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:53:46"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:55:19"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:56:04"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:56:18"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:56:21"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:56:50"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 13:56:54"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:03:24"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:42:51"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:42:54"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:42:59"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:43:09"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:43:14"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:43:24"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:43:30"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:43:32"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:43:34"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:43:48"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:44:51"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:44:53"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:00"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:02"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:12"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:27"}
+{"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:47"}
+{"level":"info","message":"Task created: 671d41f2a29257bcedc91ae9","service":"taskboard-service","timestamp":"2024-10-26 22:24:34"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 22:25:50"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 22:42:36"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 23:15:55"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 23:16:01"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-26 23:16:05"}
+{"level":"info","message":"Task updated: 671b6007ccc6c28ff390142c","service":"taskboard-service","timestamp":"2024-10-26 23:20:39"}
+{"level":"info","message":"Task updated: 671b6007ccc6c28ff390142c","service":"taskboard-service","timestamp":"2024-10-26 23:20:49"}
+{"level":"info","message":"Task updated: 671b6007ccc6c28ff390142c","service":"taskboard-service","timestamp":"2024-10-26 23:20:54"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 00:03:48"}
+{"level":"info","message":"Task created: 671d5cf607275c6cdcee3a03","service":"taskboard-service","timestamp":"2024-10-27 00:19:51"}
+{"level":"info","message":"Task created: 671d5d0207275c6cdcee3a05","service":"taskboard-service","timestamp":"2024-10-27 00:20:02"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 00:20:25"}

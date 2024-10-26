@@ -42,6 +42,7 @@ class TaskController {
   async updateTask(req, res) {
     try {
       const taskId = req.params.id;
+      console.log("update");
       const updatedTask = await TaskService.updateTask(taskId, req.body);
       logger.info(`Task updated: ${taskId}`);
       return res.json(updatedTask);
