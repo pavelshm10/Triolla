@@ -15,6 +15,7 @@ import {
 import { createTask, fetchTasks, updateTask } from "../../redux/task/taskThunk";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/useRedux";
 import classes from "./TaskList.module.css";
+import Navbar from "../../components/Navbar/Navbar";
 
 const TaskList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -27,9 +28,23 @@ const TaskList: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // You can change this based on preference
 
+  const [priorityFilter, setPriorityFilter] = useState<number | 0>(0);
+  const [titleSearch, setTitleSearch] = useState("");
+  const [sortBy, setSortBy] = useState<string | undefined>('');
+  const [order, setOrder] = useState<string | undefined>('');
+
   useEffect(() => {
-    dispatch(fetchTasks({ page: currentPage, limit: itemsPerPage }));
-  }, [dispatch, currentPage]);
+    dispatch(
+      fetchTasks({
+        page: currentPage,
+        limit: itemsPerPage,
+        priority: priorityFilter?priorityFilter:undefined,
+        title: titleSearch?titleSearch:undefined,
+        sortBy: sortBy?sortBy:undefined,
+        order: order?order: undefined,
+      })
+    );
+  }, [dispatch, currentPage, priorityFilter, titleSearch, sortBy, order]);
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
@@ -40,6 +55,7 @@ const TaskList: React.FC = () => {
 
   useEffect(() => {
     if (!tasksData) return;
+    console.log({tasksData});
     setTasks(tasksData);
   }, [tasksData]);
 
@@ -75,6 +91,16 @@ const TaskList: React.FC = () => {
 
   return (
     <div>
+      <Navbar
+        priorityFilter={priorityFilter}
+        setPriorityFilter={setPriorityFilter}
+        titleSearch={titleSearch}
+        setTitleSearch={setTitleSearch}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+        order={order}
+        setOrder={setOrder}
+      />
       <Button
         sx={{ margin: "auto", display: "flex" }}
         variant="contained"

@@ -136,3 +136,10 @@
 {"level":"info","message":"Task created: 671d5cf607275c6cdcee3a03","service":"taskboard-service","timestamp":"2024-10-27 00:19:51"}
 {"level":"info","message":"Task created: 671d5d0207275c6cdcee3a05","service":"taskboard-service","timestamp":"2024-10-27 00:20:02"}
 {"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 00:20:25"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 01:23:45"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 01:23:47"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 01:23:50"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 01:23:52"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 01:39:27"}
+{"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 01:39:31"}
+{"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 01:39:32"}

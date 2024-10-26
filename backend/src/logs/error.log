@@ -31,3 +31,5 @@
 {"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:12"}
 {"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:27"}
 {"level":"error","message":"Error occurred: getaddrinfo ENOTFOUND ac-sy6qtkn-shard-00-01.4bsjii7.mongodb.net","service":"taskboard-service","timestamp":"2024-10-26 14:45:47"}
+{"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 01:39:31"}
+{"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 01:39:32"}

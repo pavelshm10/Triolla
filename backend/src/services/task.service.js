@@ -32,22 +32,18 @@ class TaskService {
   async getTasks({ page = 1, limit = 10, filterOptions, sortBy, order }) {
     const query = {};
 
-    // Filter by priority if provided
     if (filterOptions.priority) {
       const priorityMapping = { high: 0.8, medium: 0.5, low: 0.2 };
       query.priority =
         priorityMapping[filterOptions.priority] || filterOptions.priority;
     }
 
-    // Filter by title if provided
     if (filterOptions.title) {
       query.title = new RegExp(filterOptions.title, "i");
     }
 
-    // Pagination and fetching
     const skip = (page - 1) * limit;
 
-    // Determine sorting order
     const sortOptions = {};
     sortOptions[sortBy] = order === "desc" ? -1 : 1;
 
