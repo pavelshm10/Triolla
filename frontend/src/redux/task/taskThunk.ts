@@ -13,34 +13,24 @@ interface FetchTasksParams {
   order?: string;
 }
 
-export const fetchTasks = createAsyncThunk<
-  { tasks: Task[]; metadata: Metadata },
-  FetchTasksParams
->(
-  "tasks/fetchTasks",
-  async (
-    { page, limit, priority, title, sortBy, order },
-    { rejectWithValue }
-  ) => {
+export const fetchTasks = createAsyncThunk(
+  'tasks/fetchTasks',
+  async (params: FetchTasksParams, { rejectWithValue }) => {
     try {
-      const response = await axios.get(API_URL, {
-        params: {
-          page,
-          limit,
-          // priority:'low',
-          title,
-          sortBy,
-          order,
-        },
-      });
-
-      return response.data; 
-    } catch (error) {
-      // Handle error appropriately
-      const err = error as any; // Type the error if necessary
-      return rejectWithValue(
-        err.response?.data?.message || "Failed to fetch tasks"
+      // Remove any empty parameters
+      const filteredParams = Object.fromEntries(
+        Object.entries(params).filter(([_, value]) => value !== '' && value !== undefined)
       );
+
+      const response = await axios.get(API_URL, { params: filteredParams });
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
+        return rejectWithValue(error.response.data);
+      } else if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      }
+      return rejectWithValue('An unknown error occurred');
     }
   }
 );

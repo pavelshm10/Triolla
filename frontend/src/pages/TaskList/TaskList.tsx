@@ -29,9 +29,9 @@ const TaskList: React.FC = () => {
   const itemsPerPage = 10; // You can change this based on preference
 
   const [priorityFilter, setPriorityFilter] = useState<number | 0>(0);
-  const [titleSearch, setTitleSearch] = useState("");
-  const [sortBy, setSortBy] = useState<string | undefined>('');
-  const [order, setOrder] = useState<string | undefined>('');
+  const [titleSearch, setTitleSearch] = useState('');
+  const [sortBy, setSortBy] = useState<string | undefined>();
+  const [order, setOrder] = useState<string | undefined>();
 
   useEffect(() => {
     dispatch(
