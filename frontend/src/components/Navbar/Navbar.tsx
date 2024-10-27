@@ -8,6 +8,9 @@ import {
   TextField,
   InputLabel,
   FormControl,
+  Stack,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import classes from "./Navbar.module.css";
 
@@ -17,9 +20,9 @@ interface NavbarProps {
   titleSearch: string;
   setTitleSearch: React.Dispatch<React.SetStateAction<string>>;
   sortBy: string | undefined;
-  setSortBy: React.Dispatch<React.SetStateAction<string |undefined>>;
+  setSortBy: React.Dispatch<React.SetStateAction<string | undefined>>;
   order: string | undefined;
-  setOrder: React.Dispatch<React.SetStateAction<string|undefined>>;
+  setOrder: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({
@@ -32,8 +35,17 @@ const Navbar: React.FC<NavbarProps> = ({
   order,
   setOrder,
 }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <div className={classes.navbar}>
+    <Stack
+      direction={isMobile ? "column" : "row"}
+      spacing={2}
+      alignItems={isMobile ? "flex-start" : "center"}
+      width={'100%'}
+      mb={2}
+      className={classes.navbar}
+    >
       <TextField
         label="Search by Title"
         variant="standard"
@@ -53,8 +65,8 @@ const Navbar: React.FC<NavbarProps> = ({
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={'low'}>Low</MenuItem>
-          <MenuItem value={'high'}>High</MenuItem>
+          <MenuItem value={"low"}>Low</MenuItem>
+          <MenuItem value={"high"}>High</MenuItem>
         </Select>
       </FormControl>
 
@@ -92,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({
           <MenuItem value="desc">Descending</MenuItem>
         </Select>
       </FormControl>
-    </div>
+    </Stack>
   );
 };
 
