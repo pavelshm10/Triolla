@@ -5,11 +5,13 @@ import TaskCard from "../../components/TaskCard/TaskCard";
 import TaskModal from "../../components/TaskModal/TaskModal";
 import { Task } from "../../types/task.type";
 import {
+  Alert,
   Box,
   Button,
   CircularProgress,
   Grid,
   Pagination,
+  Snackbar,
   Stack,
 } from "@mui/material";
 import { createTask, fetchTasks, updateTask } from "../../redux/task/taskThunk";
@@ -33,7 +35,8 @@ const TaskList: React.FC = () => {
   const [titleSearch, setTitleSearch] = useState("");
   const [sortBy, setSortBy] = useState<string | undefined>();
   const [order, setOrder] = useState<string | undefined>();
-
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
   useEffect(() => {
     dispatch(
       fetchTasks({
@@ -56,7 +59,6 @@ const TaskList: React.FC = () => {
 
   useEffect(() => {
     if (!tasksData) return;
-    console.log({ tasksData });
     setTasks(tasksData);
   }, [tasksData]);
 
@@ -81,16 +83,21 @@ const TaskList: React.FC = () => {
     setSelectedTask(null);
   };
 
-  const handleTaskSubmit = (task: Task) => {
+  const handleTaskSubmit = async (task: Task) => {
     if (selectedTask?._id) {
-      dispatch(updateTask({ ...selectedTask, ...task }));
+      try {
+        await dispatch(updateTask({ ...selectedTask, ...task })).unwrap;
+        setSnackbarMessage("Task updated successfully!");
+      } catch (error) {
+        setSnackbarMessage("Failed to update task.");
+      } finally {
+        setSnackbarOpen(true);
+      }
     } else {
-      dispatch(createTask(task));
+      await dispatch(createTask(task));
     }
     handleClose();
   };
-
-  const loading1 = false;
 
   return loading ? (
     <Box
@@ -153,6 +160,20 @@ const TaskList: React.FC = () => {
           isNew={isNew}
         />
       )}
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={() => setSnackbarOpen(false)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setSnackbarOpen(false)}
+          severity="info"
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
