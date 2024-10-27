@@ -7,10 +7,8 @@ import {
 } from "react-router-dom";
 import TaskList from "./pages/TaskList/TaskList";
 import classes from "./App.module.css";
-import { useAppSelector } from "./redux/hooks/useRedux";
-import { Box, CircularProgress } from "@mui/material";
+
 function App() {
-  const loading = useAppSelector((state) => state.tasks.loading);
   return (
     <>
       <h1 className={classes.title}>Taskboard</h1>
@@ -20,9 +18,6 @@ function App() {
           <Route path="/tasks" element={<TaskList />} />
         </Routes>
       </Router>
-      {/* {loading && ( */}
-       
-      {/* )} */}
     </>
   );
 }

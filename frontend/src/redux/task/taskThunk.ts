@@ -17,7 +17,6 @@ export const fetchTasks = createAsyncThunk(
   'tasks/fetchTasks',
   async (params: FetchTasksParams, { rejectWithValue }) => {
     try {
-      // Remove any empty parameters
       const filteredParams = Object.fromEntries(
         Object.entries(params).filter(([_, value]) => value !== '' && value !== undefined)
       );

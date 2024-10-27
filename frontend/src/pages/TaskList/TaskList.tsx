@@ -26,10 +26,11 @@ const TaskList: React.FC = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [isNew, setIsNew] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10; // You can change this based on preference
+  const itemsPerPage = 10;
+  const loading = useAppSelector((state) => state.tasks.loading);
 
   const [priorityFilter, setPriorityFilter] = useState<number | 0>(0);
-  const [titleSearch, setTitleSearch] = useState('');
+  const [titleSearch, setTitleSearch] = useState("");
   const [sortBy, setSortBy] = useState<string | undefined>();
   const [order, setOrder] = useState<string | undefined>();
 
@@ -38,10 +39,10 @@ const TaskList: React.FC = () => {
       fetchTasks({
         page: currentPage,
         limit: itemsPerPage,
-        priority: priorityFilter?priorityFilter:undefined,
-        title: titleSearch?titleSearch:undefined,
-        sortBy: sortBy?sortBy:undefined,
-        order: order?order: undefined,
+        priority: priorityFilter ? priorityFilter : undefined,
+        title: titleSearch ? titleSearch : undefined,
+        sortBy: sortBy ? sortBy : undefined,
+        order: order ? order : undefined,
       })
     );
   }, [dispatch, currentPage, priorityFilter, titleSearch, sortBy, order]);
@@ -55,7 +56,7 @@ const TaskList: React.FC = () => {
 
   useEffect(() => {
     if (!tasksData) return;
-    console.log({tasksData});
+    console.log({ tasksData });
     setTasks(tasksData);
   }, [tasksData]);
 
@@ -89,7 +90,20 @@ const TaskList: React.FC = () => {
     handleClose();
   };
 
-  return (
+  const loading1 = false;
+
+  return loading ? (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "60vh",
+      }}
+    >
+      <CircularProgress size={80} color="primary" />
+    </Box>
+  ) : (
     <div>
       <Navbar
         priorityFilter={priorityFilter}

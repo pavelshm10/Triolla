@@ -143,3 +143,4 @@
 {"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 01:39:27"}
 {"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 01:39:31"}
 {"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 01:39:32"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-27 11:59:26"}
