@@ -1,0 +1,16 @@
+@keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .card {
+    animation: slideIn 0.5s ease forwards;
+    /* Delay each card to create a staggered effect */
+    /* Set a base delay in JavaScript based on index */
+  }

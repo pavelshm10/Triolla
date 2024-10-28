@@ -10,7 +10,7 @@ import {
 import { Task } from "../../types/task.type";
 import { CardSx } from "../../styles/sxStyles";
 import { useTranslation } from "react-i18next";
-
+import classes from './TaskCard.module.css'
 interface TaskCardProps {
   task: Task;
   onEdit: (task: Task) => void;
@@ -30,7 +30,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit }) => {
   };
 
   return (
-    <Card sx={CardSx.card}>
+    <Card className={classes.card} sx={CardSx.card}>
       <CardContent sx={CardSx.cardContent}>
         <Badge
           color={getBadgeColor()}
