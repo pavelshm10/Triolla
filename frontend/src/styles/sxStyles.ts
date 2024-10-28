@@ -1,3 +1,6 @@
+import { Height } from "@mui/icons-material";
+import { fontSize, padding } from "@mui/system";
+
 export const CardSx = {
   card: {
     width: 200,
@@ -24,6 +27,21 @@ export const CardSx = {
     height: 80,
     overflowWrap: "break-word",
     overflowY: "auto",
+  },
+  navbar: {
+    languageButton: {
+      padding: 0,
+    },
+    // label:{
+    //   fontSize:10
+    // },
+    select: {
+      padding: 0,
+      fontSize: 10,
+    },
+    item: {
+      padding: 0,
+    },
   },
 };
 

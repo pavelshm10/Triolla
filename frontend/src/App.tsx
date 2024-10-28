@@ -7,18 +7,23 @@ import {
 } from "react-router-dom";
 import TaskList from "./pages/TaskList/TaskList";
 import classes from "./App.module.css";
+import "./i18n";
+import { useTranslation } from "react-i18next";
+import i18n from "./i18n";
 
 function App() {
+  const { t } = useTranslation();
+
   return (
-    <>
-      <h1 className={classes.title}>Taskboard</h1>
+    <div>
+      <h1 className={classes.title}>{t("general.title")}</h1>
       <Router>
         <Routes>
           <Route path="/" element={<Navigate to="/tasks" replace />} />
           <Route path="/tasks" element={<TaskList />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 

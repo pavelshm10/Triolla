@@ -13,6 +13,7 @@ import {
   useTheme,
 } from "@mui/material";
 import classes from "./Navbar.module.css";
+import LanguageButton from "../LanguageButton/LanguageButton";
 
 interface NavbarProps {
   priorityFilter: number;
@@ -42,10 +43,15 @@ const Navbar: React.FC<NavbarProps> = ({
       direction={isMobile ? "column" : "row"}
       spacing={2}
       alignItems={isMobile ? "flex-start" : "center"}
-      width={'100%'}
+      width={"100%"}
       mb={2}
       className={classes.navbar}
     >
+      <div
+        style={{ display: "flex", justifyContent: "flex-end", padding: "10px" }}
+      >
+        <LanguageButton />
+      </div>{" "}
       <TextField
         label="Search by Title"
         variant="standard"
@@ -53,7 +59,6 @@ const Navbar: React.FC<NavbarProps> = ({
         onChange={(event) => setTitleSearch(event.target.value)}
         style={{ marginRight: "10px" }}
       />
-
       <FormControl style={{ marginRight: "10px", width: "20%" }}>
         <InputLabel id="priority-label">Priority</InputLabel>
         <Select
@@ -69,7 +74,6 @@ const Navbar: React.FC<NavbarProps> = ({
           <MenuItem value={"high"}>High</MenuItem>
         </Select>
       </FormControl>
-
       <FormControl style={{ marginRight: "10px", width: "20%" }}>
         <InputLabel id="sort-by-label">Sort By</InputLabel>
         <Select
@@ -87,7 +91,6 @@ const Navbar: React.FC<NavbarProps> = ({
           <MenuItem value="title">Title</MenuItem>
         </Select>
       </FormControl>
-
       <FormControl style={{ marginRight: "10px", width: "20%" }}>
         <InputLabel id="order-label">Order</InputLabel>
         <Select

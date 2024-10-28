@@ -39,7 +39,7 @@ const tasksSlice = createSlice({
           (task) => task._id === action.payload._id
         );
         if (index !== -1) {
-          state.tasks[index] = action.payload; // Update the task in state
+          state.tasks[index] = action.payload; 
         }
       })
       .addCase(updateTask.rejected, (state, action) => {
@@ -53,7 +53,7 @@ const tasksSlice = createSlice({
       .addCase(createTask.fulfilled, (state, action: PayloadAction<Task>) => {
         state.loading = false;
         state.error = null;
-        state.tasks.push(action.payload); // Add new task to the tasks array
+        state.tasks.push(action.payload);
       })
       .addCase(createTask.rejected, (state, action) => {
         state.loading = false;

@@ -1,0 +1,16 @@
+{
+    "task": {
+      "title": "Task Title",
+      "description": "Task Description",
+      "priority": "Priority",
+      "edit": "Edit Task",
+      "create": "Create Task",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit Task"
+    },
+    "general": {
+      "title": "Task Board"
+    }
+  }
+  

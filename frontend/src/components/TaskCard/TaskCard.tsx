@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { Task } from "../../types/task.type";
 import { CardSx } from "../../styles/sxStyles";
+import { useTranslation } from "react-i18next";
 
 interface TaskCardProps {
   task: Task;
@@ -15,16 +16,17 @@ interface TaskCardProps {
 }
 
 const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit }) => {
+  const { t } = useTranslation();
   return (
     <Card sx={CardSx.card}>
       <CardContent sx={CardSx.cardContent}>
         <Typography variant="h6">
-          {task.title}
+          {t("task.title")}
         </Typography>
         <Typography sx={CardSx.description} variant="body2">
-          {task.description}
+          {t("task.description")}
         </Typography>
-        <Typography variant="caption">Priority: {task.priority}</Typography>
+        <Typography variant="caption">{t("task.priority")}: {task.priority}</Typography>
         <CardActions sx={{ padding: 0 }}>
           <Button
             sx={{ width: "100%" }}
@@ -32,7 +34,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit }) => {
             size="small"
             onClick={() => onEdit(task)}
           >
-            Edit Task
+            {t("task.edit")}
           </Button>
         </CardActions>
       </CardContent>
