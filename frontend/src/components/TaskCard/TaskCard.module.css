@@ -11,6 +11,4 @@
   
   .card {
     animation: slideIn 0.5s ease forwards;
-    /* Delay each card to create a staggered effect */
-    /* Set a base delay in JavaScript based on index */
   }
