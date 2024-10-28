@@ -1,4 +1,3 @@
-// rtlCache.ts
 import createCache from "@emotion/cache";
 import rtlPlugin from "stylis-plugin-rtl";
 

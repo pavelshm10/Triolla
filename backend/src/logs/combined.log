@@ -152,3 +152,36 @@
 {"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 23:28:13"}
 {"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 23:28:18"}
 {"level":"error","message":"Error occurred: Resource not found","service":"taskboard-service","timestamp":"2024-10-27 23:28:27"}
+{"level":"info","message":"Task created: 671fe49b6b91e0fa9b3be064","service":"taskboard-service","timestamp":"2024-10-28 21:23:07"}
+{"level":"info","message":"Task created: 671fe4bd6b91e0fa9b3be072","service":"taskboard-service","timestamp":"2024-10-28 21:23:41"}
+{"level":"info","message":"Task created: 671fe4fb6b91e0fa9b3be082","service":"taskboard-service","timestamp":"2024-10-28 21:24:43"}
+{"level":"info","message":"Task created: 671fe5056b91e0fa9b3be084","service":"taskboard-service","timestamp":"2024-10-28 21:24:53"}
+{"level":"info","message":"Task created: 671fe99c6b91e0fa9b3be0c8","service":"taskboard-service","timestamp":"2024-10-28 21:44:29"}
+{"level":"info","message":"Task updated: 671bf7494fa2ea6e41585447","service":"taskboard-service","timestamp":"2024-10-28 21:44:40"}
+{"level":"info","message":"Task created: 671ff6da6b91e0fa9b3be0d1","service":"taskboard-service","timestamp":"2024-10-28 22:40:59"}
+{"level":"info","message":"Task created: 671ffbce6b91e0fa9b3be0eb","service":"taskboard-service","timestamp":"2024-10-28 23:02:07"}
+{"level":"info","message":"Task updated: 671bf7494fa2ea6e41585447","service":"taskboard-service","timestamp":"2024-10-28 23:41:00"}
+{"level":"info","message":"Task updated: 671bf7494fa2ea6e41585447","service":"taskboard-service","timestamp":"2024-10-28 23:41:22"}
+{"level":"info","message":"Task updated: 671bf7494fa2ea6e41585447","service":"taskboard-service","timestamp":"2024-10-28 23:41:58"}
+{"level":"info","message":"Task updated: 671bf7494fa2ea6e41585447","service":"taskboard-service","timestamp":"2024-10-28 23:42:10"}
+{"level":"info","message":"Task updated: 671bf7494fa2ea6e41585447","service":"taskboard-service","timestamp":"2024-10-28 23:42:15"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-28 23:49:50"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-28 23:49:52"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-28 23:50:19"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-28 23:57:11"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-28 23:57:16"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-28 23:57:19"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:02:13"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:02:51"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:03:00"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:03:33"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:03:42"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:03:43"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:03:44"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:03:51"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:03:53"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:04:19"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:04:26"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:04:31"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:04:33"}
+{"level":"info","message":"Server running on port 3000","service":"taskboard-service","timestamp":"2024-10-29 00:04:34"}

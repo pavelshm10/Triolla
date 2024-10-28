@@ -63,7 +63,7 @@ class TaskController {
         order = "asc",
       } = req.query;
       const filterOptions = { priority, title };
-
+      
       const result = await TaskService.getTasks({
         page,
         limit,

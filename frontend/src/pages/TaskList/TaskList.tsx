@@ -17,6 +17,7 @@ import { createTask, fetchTasks, updateTask } from "../../redux/task/taskThunk";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks/useRedux";
 import classes from "./TaskList.module.css";
 import Navbar from "../../components/Navbar/Navbar";
+import { calculatePriorityScore } from "../../utils/task";
 
 const TaskList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -30,10 +31,10 @@ const TaskList: React.FC = () => {
   const itemsPerPage = 10;
   const loading = useAppSelector((state) => state.tasks.loading);
 
-  const [priorityFilter, setPriorityFilter] = useState<number | 0>(0);
+  const [priorityFilter, setPriorityFilter] = useState<string | undefined>("");
   const [titleSearch, setTitleSearch] = useState("");
-  const [sortBy, setSortBy] = useState<string | undefined>();
-  const [order, setOrder] = useState<string | undefined>();
+  const [sortBy, setSortBy] = useState<string | undefined>("");
+  const [order, setOrder] = useState<string | undefined>("");
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
   useEffect(() => {
@@ -41,13 +42,17 @@ const TaskList: React.FC = () => {
       fetchTasks({
         page: currentPage,
         limit: itemsPerPage,
-        priority: priorityFilter ? priorityFilter : undefined,
+        priority: priorityFilter?.toLocaleLowerCase(),
         title: titleSearch ? titleSearch : undefined,
         sortBy: sortBy ? sortBy : undefined,
         order: order ? order : undefined,
       })
     );
   }, [dispatch, currentPage, priorityFilter, titleSearch, sortBy, order]);
+
+  const filterPriorityRangeByFilter=(priorityFilter:string)=>{
+
+  }
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
@@ -85,14 +90,17 @@ const TaskList: React.FC = () => {
   const handleTaskSubmit = async (task: Task) => {
     if (selectedTask?._id) {
       try {
+        task.priority=calculatePriorityScore(selectedTask);
         await dispatch(updateTask({ ...selectedTask, ...task })).unwrap;
         setSnackbarMessage("Task updated successfully!");
       } catch (error) {
+        console.log(error)
         setSnackbarMessage("Failed to update task.");
       } finally {
         setSnackbarOpen(true);
       }
     } else {
+      task.priority=calculatePriorityScore(task);
       await dispatch(createTask(task));
     }
     handleClose();

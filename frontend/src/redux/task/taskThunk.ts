@@ -1,13 +1,11 @@
-// taskThunks.ts
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Metadata, Task } from "../../types/task.type";
 const API_URL = "http://localhost:3000/api/tasks";
 
 interface FetchTasksParams {
   page: number;
   limit: number;
-  priority?: number | "";
+  priority?: string | "";
   title?: string;
   sortBy?: string;
   order?: string;

@@ -16,8 +16,8 @@ import classes from "./Navbar.module.css";
 import LanguageButton from "../LanguageButton/LanguageButton";
 
 interface NavbarProps {
-  priorityFilter: number;
-  setPriorityFilter: React.Dispatch<React.SetStateAction<number>>;
+  priorityFilter: string | undefined;
+  setPriorityFilter: React.Dispatch<React.SetStateAction<string | undefined>>;
   titleSearch: string;
   setTitleSearch: React.Dispatch<React.SetStateAction<string>>;
   sortBy: string | undefined;
@@ -65,12 +65,13 @@ const Navbar: React.FC<NavbarProps> = ({
           variant="standard"
           labelId="priority-label"
           value={priorityFilter}
-          onChange={(event) => setPriorityFilter(event.target.value as number)}
+          onChange={(event) => setPriorityFilter(event.target.value)}
         >
           <MenuItem value="">
-            <em>None</em>
+            <em></em>
           </MenuItem>
           <MenuItem value={"low"}>Low</MenuItem>
+          <MenuItem value={"meduim"}>Meduim</MenuItem>
           <MenuItem value={"high"}>High</MenuItem>
         </Select>
       </FormControl>
@@ -84,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({
           variant="standard"
         >
           <MenuItem value="">
-            <em>None</em>
+            <em></em>
           </MenuItem>
           <MenuItem value="createdAt">Created At</MenuItem>
           <MenuItem value="priority">Priority</MenuItem>
@@ -101,7 +102,7 @@ const Navbar: React.FC<NavbarProps> = ({
           variant="standard"
         >
           <MenuItem value="">
-            <em>None</em>
+            <em></em>
           </MenuItem>
           <MenuItem value="asc">Ascending</MenuItem>
           <MenuItem value="desc">Descending</MenuItem>

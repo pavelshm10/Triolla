@@ -22,10 +22,6 @@ interface TaskModalProps {
 const validationSchema = Yup.object({
   title: Yup.string().required('Title is required').trim(),
   description: Yup.string().required('Description is required').trim(),
-  priority: Yup.number()
-    .min(0, 'Priority must be between 0 and 1')
-    .max(1, 'Priority must be between 0 and 1')
-    .required('Priority is required'),
 });
 
 const TaskModal: React.FC<TaskModalProps> = ({
@@ -76,17 +72,6 @@ const TaskModal: React.FC<TaskModalProps> = ({
                 margin="normal"
                 error={touched.description && Boolean(errors.description)}
                 helperText={touched.description && errors.description}
-              />
-              
-              <Field
-                as={TextField}
-                name="priority"
-                label="Priority"
-                type="number"
-                fullWidth
-                margin="normal"
-                error={touched.priority && Boolean(errors.priority)}
-                helperText={touched.priority && errors.priority}
               />
               
               <Box mt={2} display="flex" justifyContent="center">

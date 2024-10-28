@@ -3,6 +3,7 @@ export type Task = {
   title: string;
   description: string;
   priority: number;
+  createdAt?: Date;
 };
 
 export type Metadata = {

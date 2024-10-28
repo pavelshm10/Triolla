@@ -20,7 +20,6 @@ const renderApp = () => {
     direction: isHebrew ? 'rtl' : 'ltr',
   });
 
-  // Listen for language changes to update the document direction
   i18n.on('languageChanged', (lng) => {
     document.body.dir = lng === 'he' ? 'rtl' : 'ltr';
   });

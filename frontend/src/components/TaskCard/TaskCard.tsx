@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Badge,
   Button,
   Card,
   CardActions,
@@ -17,16 +18,35 @@ interface TaskCardProps {
 
 const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit }) => {
   const { t } = useTranslation();
+
+  const getBadgeColor = () => {
+    if (task.priority >= 0.66) {
+      return "error";
+    } else if (task.priority >= 0.33) {
+      return "warning";
+    } else {
+      return "success";
+    }
+  };
+
   return (
     <Card sx={CardSx.card}>
       <CardContent sx={CardSx.cardContent}>
-        <Typography variant="h6">
-          {t("task.title")}
-        </Typography>
+        <Badge
+          color={getBadgeColor()}
+          badgeContent=" "
+          variant="dot"
+          sx={CardSx.badge}
+        >
+          <Typography variant="h6">{t("task.title")}</Typography>
+        </Badge>
+
         <Typography sx={CardSx.description} variant="body2">
           {t("task.description")}
         </Typography>
-        <Typography variant="caption">{t("task.priority")}: {task.priority}</Typography>
+        <Typography variant="caption">
+          {t("task.priority")}: {task.priority}
+        </Typography>
         <CardActions sx={{ padding: 0 }}>
           <Button
             sx={{ width: "100%" }}

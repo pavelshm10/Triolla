@@ -33,9 +33,18 @@ class TaskService {
     const query = {};
 
     if (filterOptions.priority) {
-      const priorityMapping = { high: 0.8, medium: 0.5, low: 0.2 };
-      query.priority =
-        priorityMapping[filterOptions.priority] || filterOptions.priority;
+      switch (filterOptions.priority) {
+        case 'low':
+          query.priority = { $lt: 0.33 };
+          break;
+        case 'medium':
+          query.priority = { $gte: 0.33, $lt: 0.66 };
+          break;
+        case 'high':
+          query.priority = { $gte: 0.66, $lte: 1 };
+          break;
+      }
+      console.log("test ", query.priority);
     }
 
     if (filterOptions.title) {

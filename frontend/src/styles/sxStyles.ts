@@ -32,15 +32,20 @@ export const CardSx = {
     languageButton: {
       padding: 0,
     },
-    // label:{
-    //   fontSize:10
-    // },
     select: {
       padding: 0,
       fontSize: 10,
     },
     item: {
       padding: 0,
+    },
+  },
+  badge: {
+    mr: 2,
+    "& .MuiBadge-dot": {
+      width: 12,
+      height: 12,
+      borderRadius: "50%",
     },
   },
 };
