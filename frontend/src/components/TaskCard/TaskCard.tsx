@@ -10,13 +10,14 @@ import {
 import { Task } from "../../types/task.type";
 import { CardSx } from "../../styles/sxStyles";
 import { useTranslation } from "react-i18next";
-import classes from './TaskCard.module.css'
+import classes from "./TaskCard.module.css";
 interface TaskCardProps {
   task: Task;
   onEdit: (task: Task) => void;
+  index: number;
 }
 
-const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit, index }) => {
   const { t } = useTranslation();
 
   const getBadgeColor = () => {
@@ -30,7 +31,11 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit }) => {
   };
 
   return (
-    <Card className={classes.card} sx={CardSx.card}>
+    <Card
+      className={classes.card}
+      style={{ animationDelay: `${index * 0.2}s` }}
+      sx={CardSx.card}
+    >
       <CardContent sx={CardSx.cardContent}>
         <Badge
           color={getBadgeColor()}
