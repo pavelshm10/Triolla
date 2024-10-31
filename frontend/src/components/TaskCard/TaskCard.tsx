@@ -14,10 +14,9 @@ import classes from "./TaskCard.module.css";
 interface TaskCardProps {
   task: Task;
   onEdit: (task: Task) => void;
-  index: number;
 }
 
-const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit, index }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit }) => {
   const { t } = useTranslation();
 
   const getBadgeColor = () => {
@@ -33,7 +32,6 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onEdit, index }) => {
   return (
     <Card
       className={classes.card}
-      style={{ animationDelay: `${index * 0.2}s` }}
       sx={CardSx.card}
     >
       <CardContent sx={CardSx.cardContent}>

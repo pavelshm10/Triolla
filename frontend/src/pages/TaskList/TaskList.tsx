@@ -50,9 +50,7 @@ const TaskList: React.FC = () => {
     );
   }, [dispatch, currentPage, priorityFilter, titleSearch, sortBy, order]);
 
-  const filterPriorityRangeByFilter=(priorityFilter:string)=>{
-
-  }
+  const filterPriorityRangeByFilter = (priorityFilter: string) => {};
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
@@ -90,17 +88,17 @@ const TaskList: React.FC = () => {
   const handleTaskSubmit = async (task: Task) => {
     if (selectedTask?._id) {
       try {
-        task.priority=calculatePriorityScore(selectedTask);
+        task.priority = calculatePriorityScore(selectedTask);
         await dispatch(updateTask({ ...selectedTask, ...task })).unwrap;
         setSnackbarMessage("Task updated successfully!");
       } catch (error) {
-        console.log(error)
+        console.log(error);
         setSnackbarMessage("Failed to update task.");
       } finally {
         setSnackbarOpen(true);
       }
     } else {
-      task.priority=calculatePriorityScore(task);
+      task.priority = calculatePriorityScore(task);
       await dispatch(createTask(task));
     }
     handleClose();
